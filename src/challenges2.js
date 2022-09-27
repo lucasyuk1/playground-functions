@@ -17,8 +17,19 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(str) {
+  let reg = /\d+/g;
+  let result = str.match(reg);
+  let sum = result[0];
+  for (let i = 0; i < result.length; i += 1) {
+    sum += result[i];
+    
+  }
+  if (sum > 1){
+    return sum+' copos de água';
+  }
+  
+  return sum+' copo de água';
 }
 
 module.exports = {
