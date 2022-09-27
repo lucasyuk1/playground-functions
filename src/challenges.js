@@ -53,32 +53,40 @@ function catAndMouse(mouse, cat1, cat2) {
   } else {
     return 'cat1';
   }
-  
+
 }
 
 // Desafio 8
 function fizzBuzz(array) {
   let newArray = [];
- for (let i = 0; i < array.length; i +=1 ) {
-  if (array[i] % 3 == 0 && array[i] % 5 == 0){
-    newArray.push('fizzBuzz');
-  } else if (array[i] % 3 == 0){
-    newArray.push('fizz');
-  } else if (array[i] % 5 == 0){
-    newArray.push('buzz');
-  } else if (array[i] % 3 != 0 && array[i] % 5 != 0){
-    newArray.push('bug!');
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] % 3 == 0 && array[i] % 5 == 0) {
+      newArray.push('fizzBuzz');
+    } else if (array[i] % 3 == 0) {
+      newArray.push('fizz');
+    } else if (array[i] % 5 == 0) {
+      newArray.push('buzz');
+    } else if (array[i] % 3 != 0 && array[i] % 5 != 0) {
+      newArray.push('bug!');
+    }
   }
- }
   return newArray;
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(str) {
+  let array = str;
+
+  array = str.replace(/a/g,'1').replace(/e/g,'2').replace(/i/g,'3').replace(/o/g,'4').replace(/u/g,'5');
+
+  return array;
 }
-function decode() {
-  // seu código aqui
+function decode(str) {
+  let array = str;
+
+  array = str.replace(/1/g,'a').replace(/2/g,'e').replace(/3/g,'i').replace(/4/g,'o').replace(/5/g,'u');
+
+  return array;
 }
 
 // Desafio 10
