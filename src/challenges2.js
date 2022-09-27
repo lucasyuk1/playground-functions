@@ -18,9 +18,9 @@ function triangleCheck(lineA, lineB, lineC) {
 
 // Desafio 13
 function hydrate(str) {
-  let reg = /\d+/g;
-  let result = str.match(reg);
-  let sum = result[0];
+
+  let result = str.match(/\d+/g).map(Number);
+  let sum = 0;
   for (let i = 0; i < result.length; i += 1) {
     sum += result[i];
     
