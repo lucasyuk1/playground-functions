@@ -6,32 +6,26 @@ function generatePhoneNumber(number) {
     return 'Array com tamanho incorreto.';
   }
 
-  let cont = 0;
-  
+ 
   for (let i = 0; i < number.length; i += 1) {
-    if (number[i] > 9){
+    let cont = 0;
+    if (number[i] > 9 || number[i] < 0){
       return 'não é possível gerar um número de telefone com esses valores';
     }
     for (let j = 0; j < number.length; j += 1) {
     if (number[j] === number[i]){
       cont += 1;
     }
-    }
     if (cont >= 3){
       return 'não é possível gerar um número de telefone com esses valores';
     } 
+    }
+    
   }
-  let phone = number.replace(/\D/g, '')
-
-  .replace(/(\d{2})(\d)/, '($1)$2')
-
-  .replace(/(\d{4})(\d)/, '$1-$2')
-
-  .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
-
-  .replace(/(-\d{4})\d+?$/, '$1')
-
-  return phone;
+  
+  
+  
+  return '(' + number[0] + '' + number[1] + ')' + ' ' + number[2] + '' + number[3] + '' + number[4] + '' + number[5] + '' + number[6] + '-' + number[7] + '' + number[8] + '' + number[9] + '' + number[10] + '';;
 }
 
 // Desafio 12
