@@ -1,8 +1,37 @@
 // Desafio 11
 function generatePhoneNumber(number) {
   
-  return number.replace(/\D/g,"").replace(/^(\d{2})(\d)/g,"($1) $2").replace(/(\d)(\d{4})$/,"$1-$2"); 
 
+  if (number.length != 11){
+    return 'Array com tamanho incorreto.';
+  }
+
+  let cont = 0;
+  
+  for (let i = 0; i < number.length; i += 1) {
+    if (number[i] > 9){
+      return 'não é possível gerar um número de telefone com esses valores';
+    }
+    for (let j = 0; j < number.length; j += 1) {
+    if (number[j] === number[i]){
+      cont += 1;
+    }
+    }
+    if (cont >= 3){
+      return 'não é possível gerar um número de telefone com esses valores';
+    } 
+  }
+  let phone = number.replace(/\D/g, '')
+
+  .replace(/(\d{2})(\d)/, '($1)$2')
+
+  .replace(/(\d{4})(\d)/, '$1-$2')
+
+  .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
+
+  .replace(/(-\d{4})\d+?$/, '$1')
+
+  return phone;
 }
 
 // Desafio 12
