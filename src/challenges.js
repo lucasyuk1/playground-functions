@@ -90,8 +90,22 @@ function decode(str) {
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(tech2, name2) {
+  let array = [];
+  tech2.sort();
+  for (let i = 0; i <tech2.length; i += 1){
+
+    let info = {
+      tech: tech2[i],
+      name: name2,
+    };
+
+    array[i] = info;
+  }
+  if(array != 0){
+    return array;
+  }
+  return 'Vazio!';
 }
 
 module.exports = {
